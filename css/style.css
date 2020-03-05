@@ -1,10 +1,10 @@
 .imgbackground {
     /* border: 2px solid black; */
-    /* min-height: 600px;
+    min-height: 600px;
     background-image: url("../images/fried-rice-bw.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-position: center center; */
+    background-position: center center;
 } 
 
 .imgLoading {
