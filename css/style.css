@@ -1,13 +1,27 @@
 .imgbackground {
-    min-height: 600px;
+    /* border: 2px solid black; */
+    /* min-height: 600px;
     background-image: url("../images/fried-rice-bw.png");
-    background-repeat: repeat-y;
-    background-position: center;
-}
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center; */
+} 
 
 .imgLoading {
     margin: 0;
     padding: 0;
     border-radius: 50%;
     width: 100%;
+}
+
+.imgThumb {
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    max-width: 50px;
+    max-height: 50px;
+}
+
+.receipeFrame {
+    background-color: rgba(128, 128, 128, 0.5);
 }
