@@ -30,9 +30,9 @@ $(function () {
 
                         data.meals.forEach((meal, i) => {
                             //Add list
-                            let item = `<a href="#receipe" class="list-group-item list-group-item-action" onclick='selectMeal(${i})'>`;
+                            let item = `<a href="#receipe" id="meal${meal.idMeal}" class="receipeitem list-group-item list-group-item-action" onclick='selectMeal(${i}, this.id)'>`;
                             item += '<div class="d-flex w-100 justify-content-between align-items-center">';
-                            item += `<img class='imgThumb' src='${meal.strMealThumb}/preview' alt='thumb_${meal.idMeal}' />`;
+                            item += `<img class='imgThumb' src='${meal.strMealThumb}/preview' alt='thumb_${meal.idMeal}' onerror="this.onerror=null; this.src='./images/logo-small.png'" />`;
                             item += `<span class='flex-fill ml-2'>${meal.strMeal}</span>`;
                             item += '</div></a>';
                             list.append(item);
@@ -79,8 +79,12 @@ function loading(onOff) {
         setTimeout(()=> {$('#loadingPan').fadeOut();}, 1000);
 }
 
-function selectMeal(index) {
-    //clean previous meal
+function selectMeal(index, element) {
+    // highlight selected meal
+    $('.receipeitem').removeClass("active");
+    $(`#${element}`).addClass("active");
+
+    //clean previous meal details
     $('#receipe').html('');
 
     let meal = data.meals[index];
@@ -98,14 +102,14 @@ function selectMeal(index) {
             mealDet = mealDet.meals[0];
 
             
-            let prev = '<div class="card receipeFrame">'; 
+            let prev = '<div class="card bg-light">'; 
             prev += `<h5 class="card-header">${meal.strMeal}</h5>`;
             prev += `<img class="card-img-top" src='${meal.strMealThumb}' alt='pic_${meal.idMeal}' />`;
             prev += '<div class="card-body">';
             prev += `<h5 class="card-title">${meal.strMeal}</h5>`;
-            prev += `<p>Origin: ${mealDet.strArea}</p>`;
+            prev += `<p class="text-right">Origin: ${mealDet.strArea}</p>`;
             if (mealDet.strCategory) {
-                prev += `<p>Category: ${mealDet.strCategory}</p>`;
+                prev += `<p class="text-right">Category: ${mealDet.strCategory}</p>`;
             }
 
             //ingedients
