@@ -37,18 +37,26 @@ $(function () {
                             item += '</div></a>';
                             list.append(item);
                         });
-                        
+                        loading(false);
                     } else {
                         let msg = `Hey, I don't know what <mark>${$('#ingredient').val()}</mark> is. Can you try another thing?`;
+                        loading(false);
                         messageToUser(msg);
                     }
                 })
                 .catch(error => {
+                    loading(false);
                     messageToUser("Ohho.. Something not good happened. Keep calm!");
                     console.error('error', error);
                 });
+        }
+    });
 
-            loading(false);
+    // mapping ENTER press on the ingredient field
+    $('#ingredient').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            $('#button-search').click();
         }
     });
 });
