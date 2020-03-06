@@ -127,7 +127,7 @@ function selectMeal(index, element) {
             prev += '<h6 class="card-title">Instructions</h6>';
 
             //brake in lines to easy reading
-            prev += `<p>${(mealDet.strInstructions).replace(/\. /g,".<br/><br/>")}</p>`;
+            prev += `<p>${(mealDet.strInstructions).replace(/\./g,".<br/><br/>")}</p>`;
             
 
             prev += '</div><br/></div><br/>';
