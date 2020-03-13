@@ -39,7 +39,7 @@ $(function () {
                         });
                         loading(false);
                     } else {
-                        let msg = `Hey, I don't know what <mark>${$('#ingredient').val()}</mark> is. Can you try another thing?`;
+                        let msg = `Hey, I don't know what <mark>${$('#ingredient').val()}</mark> is. Can you try another thing? (egg, bacon, rice)`;
                         loading(false);
                         messageToUser(msg);
                     }
