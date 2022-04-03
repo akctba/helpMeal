@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/akctba/helpMeal#readme",
   "dependencies": {
-    "node-sass": "^5.0.0"
+    "node-sass": "^7.0.0"
   }
 }
